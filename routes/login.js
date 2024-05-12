@@ -12,7 +12,7 @@ router.post('/',async(req,res)=>{
 
    console.log({usersemail, userspassword, usersname, usersphone}, req.body)
 
-   await prisma.customer.create({
+   const user = await prisma.customer.create({
     data:{
    name : usersname,    
    email: usersemail,
@@ -20,12 +20,30 @@ router.post('/',async(req,res)=>{
    phone_number: usersphone
     }
    }) 
-   res.redirect('/profile')
+
+   // server crated cooki and asking brousr for update
+  res.cookie("userIdCookie", user.id)
+
+  // getting the user id from req
+  const userId = getUserId(req)
+
+ 
+  console.log( userId )
+
+   res.redirect('/')
   } catch (error) {
   console.log("error login in", error);
     res.status(500).json({message:"internal server error"})
   }
 })
+
+const getUserId = (req) => {
+  const cookies = req.headers.cookie?.split(";")?.map(cookie =>  cookie.trim().split("=")) ?? [[]]
+  const userIdCookie = cookies.find(cookie => cookie[0] == 'userIdCookie')
+  if(!userIdCookie) return undefined ;
+  const userId = userIdCookie[1]
+  return +userId
+}
 
 
 
