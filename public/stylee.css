@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800&amp;display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Expletus+Sans:ital,wght@0,400..700;1,400..700&display=swap');
+
+
+:root{
+    --blue: #9ab3f5;
+    --purple: #9a1663;
+    --white: #ffffff;
+    --shadow: rgba(0,0,0,0.15) 0px 5px 15px 0px00;
+    margin: 0;
+
+}
+.title-description1 {
+        padding: 80px;
+    font-size:clamp(2rem, calc(2rem+3.5vw),8rem);
+    color: hsl(0, 0%, 50%);
+    font-weight: 1000;
+    background-image: url(images/dankil.jpg);
+    background-position: center;
+    background-size: cover;
+    color: transparent;
+    /* -webkit-background-clip: text; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.title-description1 span{
+    margin-top: 70px;
+    font-size: 3rem;
+    display: flex;
+    text-align: center;
+
+}
+.title-description11{
+display: flex;
+font-size: 2rem;
+justify-content: center;
+align-items: center;
+
+}
+.country{
+    padding: 30px;
+    display: flex;
+
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    font-family: "Poppins",sans-serif;
+}
+#date{
+    width: 200px;
+    height: 50px;
+    font-size: 1rem;
+    text-align: center;
+    border-radius: 50px;
+}
+body{
+    
+    align-items: center;
+    justify-content: center;
+    height: 70vh;
+    display: flexs;
+    color: whitesmoke;
+    font-family: "Expletus Sans", sans-serif;
+
+    background-color: black;
+    
+}
+.all{
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.search-bar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 300px;
+    height: 100px;
+    border-radius: 50px;
+    
+ 
+    background-color: var(--white);
+}
+.title-description1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    text-align: center;
+}
+
+.dropdown {
+    position: relative;
+  
+    width: 280px;
+    height: 40px;
+    border-radius: 50px;
+    border: 50% var(--white);
+    background-color: var(--purple);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+}
+
+.dropdown-text {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--white);
+    padding: 1rem 1.5rem;
+}
+
+.dropdown-list {
+    position:absolute;
+    top: 4rem;
+    left: 0;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: var(--white);
+    transition: max-height 0.5s;
+}
+
+#list.show {
+    max-height: 300px;
+}
+.dropdown-list-item {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 1rem 0 1rem 1.5rem;
+    cursor: pointer;
+    transition: margin-left 0.2s ease-in-out , color 0.2s ease-in-out;
+}
+
+.dropdown-list-item:hover{
+    margin-left: 0.5rem;
+    color: var(--purple);
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    padding-right: 1rem;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.search-box input {
+    padding: 1rem;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--purple);
+    border: 0px;
+    outline: 0;
+}
+
+.search-box i {
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+.search-box input::placeholder{
+    font-size: 1rem;
+    font-weight: 500;
+    background-color: white;
+   
+    color: var(--purple);
+}
+#search-input{
+    background:none;
+}
+.card-group{
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 10px;
+    justify-content: center;
+    color: white;
+    
+}
+.card{
+    width: 205px;
+    height: 300px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    transition: 0.5s;
+}
+.card .layer{
+    background: linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0));
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 75%;
+    opacity: 0;
+    transition: 0.3s;
+}
+.card .info{
+    position: absolute;
+    bottom: -50%;
+    padding: 15px;
+    opacity: 0;
+    transition: 0.5s bottom,1.7s opacity;
+}
+.info p{
+    font-size: 14px;
+    margin-top: 3px;
+    color: white;
+}
+.info p span{
+  letter-spacing: -3px;
+}
+.info button{
+ 
+    background: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 8px;
+}
+.info button a{
+  text-decoration: none;
+  color: #000;
+}
+.card:hover,
+.card:hover img,
+.card:hover layer{
+    transform:scale(1.1) ;
+
+}
+.card:hover > .layer{
+    opacity: 1;
+}
+.card:hover > .info{
+    bottom: 0;
+    opacity: 1;
+}
+.card-group:hover > .card:not(:hover){
+    filter:blur(5px)
+}
+
+.card-groupp{
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: center;
+  color: white;
+  
+}
+.cardd{
+  width: 205px;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.cardd img{
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  transition: 0.5s;
+}
+.cardd .layer{
+  background: linear-gradient(to top,rgba(0,0,0,1),rgba(0,0,0,0));
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 75%;
+  opacity: 0;
+  transition: 0.3s;
+}
+.cardd .info{
+  position: absolute;
+  bottom: -50%;
+  padding: 5px;
+  opacity: 0;
+  
+  transition: 0.8s ,left,1.7s opacity;
+}
+.info p{
+  font-size: 14px;
+  margin-top: 3px;
+  color: white;
+}
+.info p span{
+letter-spacing: -3px;
+}
+.cardd .info button{
+
+  background: none;
+  border: none;
+  padding: 0;
+  
+  font-weight: bold;
+  border-radius: 8px;
+ 
+  margin-top: 8px;
+}
+.info button a{
+text-decoration: none;
+color: #000;
+}
+.info button img{
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+
+}
+.cardd:hover,
+.cardd:hover img,
+.cardd:hover layer{
+  transform:scale(1.1);
+
+}
+.cardd:hover > .layer{
+  opacity: 1;
+}
+.cardd:hover > .info{
+  bottom: 0;
+  opacity: 1;
+}
+.card-groupp:hover > .cardd:not(:hover){
+  filter:blur(0px)
+}
+.place-title{
+    margin-top: 30px;
+    display: flex;
+    text-align: center;
+    padding: 30px;
+
+}
+.momcard{
+    color: rgb(19, 44, 44);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    }
+    .hotel{
+        margin-top: 0px;
+    }
+  
+  
+    .hotel-1 h2{
+        padding-left: 30px;
+        padding-top: 30px;
+        display: flex;
+        font-size: 2rem;
+        color: whitesmoke;
+
+    }
+    fieldset{background-color: #304663;
+/**https://github.com/tri-travel1/front-end.git*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 30px;
+        height: 500px;
+    }
+
+    .card1 {
+        width: 240px;
+        gap: 50px;
+        height: 240px;
+        background-color: #111;
+       flex: 0 0 auto;
+       margin-top: 4em;
+       overflow-x: none;
+       border-radius: 50%;
+    }
+    #btn{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: -45px;
+      margin-left: 70px;
+     
+      
+    
+      width: 80px;
+      height: 10px;
+      margin-left: 80px;
+     
+    
+    }
+    #btn a{
+      text-decoration: none;
+      color: #000;
+    }
+    .hoverthingi{
+        height: 40px;
+        width: 200px;
+        background-color:white;
+        overflow: hidden;
+        color: black;
+
+       
+        margin-top: 7rem;
+       border-radius: 100px 100px 100px 100px;
+       margin-left: 15px;
+  
+    }
+    .hoverthingi p{
+      color: #111;
+      font-size: 0.81rem;
+      font-family: initial;
+      justify-content: center;
+    }
+    .hoverthingi  img{
+      width: 30px;
+      height: 30px;
+      margin-left: 5px;
+      justify-content: center;
+      margin-top: -5px;
+
+    }
+    
+    
+    #div1{
+       background-image: url(images/guider1.jpg);             
+       background-position: center;
+       background-size: cover;
+    }
+    #div2{
+        background-image: url(images/guider2.jpg);
+        background-position: center;
+       background-size: cover;
+    }
+    #div3{
+        background-image: url(images/guider3.jpg);
+        background-position: center;
+        background-size: cover;
+    }  
+    #div4{
+        background-image: url(images/guider4.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    .cerdtxt{
+        display: flex;
+        padding: 10px;
+        text-align: center;
+        color: blue;
+        font-weight: 600;
+    }
+    footer{
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        padding: 30px;
+        margin-top: 40px;
+    }
+    .container {
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+        max-width: 500px;
+        width: 100%;
+        color: white;
+        background: transparent;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      }
+      
+      .container header {
+        font-size: 1.2rem;
+        color: #fff;
+        font-weight: 600;
+        text-align: center;
+      }
+      
+      .container .form {
+        margin-top: 15px;
+      }
+      
+      .form .input-box {
+        width: 100%;
+        margin-top: 10px;
+      }
+      
+      .input-box label {
+        color: #fff;
+      }
+      
+      .form :where(.input-box input, .select-box) {
+        position: relative;
+        height: 35px;
+        width: 100%;
+        outline: none;
+        font-size: 1rem;
+        color: #808080;
+        margin-top: 5px;
+        border: 1px solid rgb(208, 233, 248);
+        border-radius: 6px;
+        padding: 0 15px;
+        background: #fff;
+      }
+      
+      .input-box input:focus {
+        box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+      }
+      
+      .form .column {
+        display: flex;
+        column-gap: 15px;
+      }
+      
+      .form .gender-box {
+        margin-top: 10px;
+      }
+      
+      .form :where(.gender-option, .gender) {
+        display: flex;
+        align-items: center;
+        column-gap: 50px;
+        flex-wrap: wrap;
+      }
+      
+      .form .gender {
+        column-gap: 5px;
+      }
+      
+      .gender input {
+        accent-color: #EE4E34;
+      }
+      
+      .form :where(.gender input, .gender label) {
+        cursor: pointer;
+      }
+      
+      .gender label {
+        color: #000;
+      }
+      
+      .address :where(input, .select-box) {
+        margin-top: 10px;
+      }
+      
+      .select-box select {
+        height: 100%;
+        width: 100%;
+        outline: none;
+        border: none;
+        color: #808080;
+        font-size: 1rem;
+        background: rgb(208, 233, 248);
+      }
+      
+      .form button {
+        height: 40px;
+        width: 100%;
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 400;
+        margin-top: 15px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: rgb(66, 170, 245);
+      }
+      
+      .form button:hover {
+        background: #14075b;
+      }
+      .btns{
+        display: flex;
+        gap: 20px;
+      }
+      
