@@ -4,29 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Travel Profile</title>
-    <link rel="stylesheet" href="/public/profilestyl.css"> </head>
+    <link rel="stylesheet" href="/profilestyl.css"> </head>
 <body>
     <div class="container">
         <header class="profile-header">
-            <img src="profile-picture.jpg" alt="Profile Picture"> <h1>John Doe</h1> </header>
+            <img src="profile-picture.jpg" alt="Profile Picture"> <h1>
+            <%= user.name %>
+            <%= user.email %>
+            <%= user.phone_number %>
+
+            </h1> </header>
         <section class="booking-details">
             <h2>Your Upcoming Trip</h2>
             <ul>
                 <li>
-                    <span class="detail-label"><%  %> </span>
-                    <span class="detail-value">Convertible</span>
+                    <span class="detail-label">Car </span>
+                <span class="detail-value"><%= user.Booking[0].car.name %></span>
                 </li>
                 <li>
                     <span class="detail-label" >Booked Hotel:</span>
-                    <span class="detail-value">Grand Beach Resort</span>
+                    <span class="detail-value"><%= user.Booking[0].hotel.name %></span>
                 </li>
                 <li>
                     <span class="detail-label">Booking Site:</span>
-                    <span class="detail-value">Travelocity</span>
+                    <span class="detail-value"><%= user.Booking[0].site.name %></span>
                 </li>
                 <li>
                     <span class="detail-label">Tour Guide:</span>
-                    <span class="detail-value">Sarah Miller</span>
+                    <span class="detail-value"><%= user.Booking[0].TourGuide.name %></span>
                 </li>
             </ul>
         </section>
