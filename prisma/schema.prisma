@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Customer {
+  id           Int       @id @default(autoincrement())
+  name         String
+  email        String
+  password     String
+  phone_number String
+  Booking      Booking[]
+}
+
+model Car {
+  id          Int     @id @default(autoincrement())
+  name        String
+  type        String
+  capacity    Int
+  daily_price Decimal
+  image_url   String?
+
+  Booking Booking[]
+}
+
+model Hotel {
+  id            Int       @id @default(autoincrement())
+  name          String
+  star_rating   Int
+  location      String
+  nightly_price Decimal
+  image_url     String
+  Booking       Booking[]
+}
+
+model TourGuide {
+  id           Int       @id @default(autoincrement())
+  name         String
+  languages    String
+  specialties  String
+  daily_price  Decimal
+  availability Boolean
+  image_url    String
+  Booking      Booking[]
+}
+
+model Site {
+  id        Int       @id @default(autoincrement())
+  name      String
+  country   String
+  image_url String
+  Booking   Booking[]
+}
+
+model Booking {
+  id          Int       @id @default(autoincrement())
+  customer    Customer  @relation(fields: [customerId], references: [id])
+  customerId  Int
+  car         Car       @relation(fields: [Carid], references: [id])
+  Carid       Int
+  hotel       Hotel     @relation(fields: [hotelid], references: [id])
+  hotelid     Int
+  TourGuide   TourGuide @relation(fields: [TourGuideid], references: [id])
+  TourGuideid Int
+  site        Site      @relation(fields: [siteid], references: [id])
+  siteid      Int
+  destination String?
+  num_rooms   Int
+  adults      Int
+  children    Int
+  start_date  DateTime
+  end_date    DateTime
+  total_price Decimal
+}
