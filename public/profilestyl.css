@@ -1,70 +1,88 @@
+
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f5f5f5;
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #f5f5f5; 
+
 }
 
 .container {
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 30px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 400px;
-  text-align: center;
-}
 
-.profile-header {
+margin: 80px auto;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+background-color: #eee;
+border-radius: 5px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+}
+.profiles{
   display: flex;
-  align-items: center;
-  margin-bottom: 20px;
+  flex-direction: column;
+}
+.profile-header {
+display: flex;
+align-items: center;
+padding: 20px;
+background-color: #f9f5ee;
+border-radius: 5px 5px 0 0;
 }
 
-.profile-header img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-right: 20px;
+.profile-image {
+width: 100px;
+height: 100px;
+border-radius: 50%;
+object-fit: cover;
 }
+.booking-details{
+  width: 60%;
+ /* height: 400px; */
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ margin: 0 auto;
+}
+.profile-info {
+margin-left: 70px;
+}
+.detail-label{
+margin-right: 30px;
+/* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+font-size:large;
+}
+.alldetails{
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+.lists{
+  border: none;
+  height: 50px;
+  width: 250px;
+  background-color: #e9e1e1;
+  border-radius: 20px;
+  justify-content: center;
+  color: rgb(46, 46, 46);
 
-.profile-header h1 {
-  font-size: 24px;
-  margin: 0;
 }
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack elements on top of each other */
+  }
 
-.booking-details {
-  margin-top: 20px;
-}
+  .profiles {
+    flex-direction: row; /* Display profile info next to image on small screens */
+  }
 
-.booking-details h2 {
-  font-size: 20px;
-  margin-bottom: 10px;
-}
+  .booking-details {
+    width: 100%; /* Take full width on small screens */
+  }
 
-.booking-details ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  .profile-info {
+    margin-left: 20px; /* Adjust margin for smaller layout */
+  }
 }
-
-.booking-details li {
-  margin-bottom: 10px;
-}
-
-.detail-label,
-.detail-value {
-  display: inline-block;
-  width: 50%;
-}
-
-.detail-label {
-  font-weight: bold;
-}
-
-.detail-value {
-  text-align: left;
-}
+/* fella; */
+/* Add styles for profile popup and form elements here */
