@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tri-travel</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=
@@ -21,46 +21,55 @@ Lora:wght@400;500;600&family=Nova+Slim&family=Prata&family
       rel="stylesheet"
     />
 </head>
-<body>
+<body class="body">
   
   <aside class="sidebar">
+    <div class="menu-icon" >
+      <div class="menu-con " onclick="toggleSidebar()">
+    <div class="menu-icon-bar" ></div>
+    <div class="menu-icon-bar" ></div>
+    <div class="menu-icon-bar" ></div>
+  </div>
+    </div>
           
-    <ul class="links">
+    <ul class="links" id="sidebarMenu">
       <h4>Main Menu</h4>
       <li>
-        <span ><img src="images/icons8-home-24(1).png" alt="" style="background-color: #bc6c25; border-radius: 50%;"></span>
+        <span ><img src="images/icons8-home-24(1).png" alt="" ></span>
         <a href="#home">Home</a>
       </li>
+      
+      
       <li>
-        <span ><img src="images/icons8-about-us-80.png" alt="" width="25px" height="25px"  style="background-color: #bc6c25; border-radius: 50%;"></span>
+        <span ><img src="images/icons8-about-us-80.png" alt="" width="25px" height="25px"  ></span>
         <a href="#detail">About us</a>
       </li>
       <li>
-        <span ><img src="images/icons8-service-24.png" alt="" style="background-color: #bc6c25; border-radius: 50%;"></span>
+        <span ><img src="images/icons8-service-24.png" alt="" ></span>
         <a href="#service">Service</a>
       </li>
       <li>
-        <span ><img src="images/icons8-feedback-80.png" alt=""  width="25px" height="25px" style="background-color: #bc6c25; border-radius: 50%; "></span>
+        <span ><img src="images/icons8-feedback-80.png" alt=""  width="25px" height="25px"></span>
         <a href="#Reviews">Reviews</a>
       </li>
       <li>
-        <span><img src="images/icons8-contact-us-24.png" alt="" style="background-color: #bc6c25; border-radius: 50%;"></span>
+        <span><img src="images/icons8-contact-us-24.png" alt="" ></span>
         <a href="#aboutus">Contact</a>
       </li>
 
       <hr>
       <h4>Developers</h4>
       <li>
-        <span ><img src="images/icons8-businesswoman-24.png" alt="" style="background-color: #bc6c25; border-radius: 50%;"></span>
+        <span ><img src="images/icons8-businesswoman-24.png" alt="" ></span>
         <a href="https://github.com/mahletm2020">Mahlet.M</a>
       </li>
       <li>
-        <span ><img src="images/icons8-businesswoman-24.png" alt="" style="background-color: #bc6c25; border-radius: 50%;"></span>
+        <span ><img src="images/icons8-businesswoman-24.png" alt="" ></span>
         
         <a href="https://github.com/maki-max">Maraki.A </a>
       </li>
       <li>
-        <span ><img src="images/icons8-businesswoman-24.png" alt="" style="background-color: #bc6c25; border-radius: 50%;"></span>
+        <span ><img src="images/icons8-businesswoman-24.png" alt="" ></span>
         
         <a href="https://github.com/sebrin2445">Sebrina.S</a>
       </li>
@@ -68,28 +77,36 @@ Lora:wght@400;500;600&family=Nova+Slim&family=Prata&family
       <hr>
       <h4>Account</h4>
       <li>
-        <span ><img src="images/icons8-male-user-24.png" alt="" style="background-color: #bc6c25; border-radius: 50%;"></span>
+        <span ><img src="images/icons8-male-user-24.png" alt="" ></span>
 
-        <a href="#">Profile</a>
+        <a href="profile.html">Profile</a>
      
       </li>
       <li>
-        <span ><img src="images/signup.png" alt="" style="background-color: #bc6c25; border-radius: 50%;"></span>
+        <span ><img src="images/signup.png" alt="" ></span>
         <a href="Signup.html">Sign up</a>
       </li>
       <li>
-        <span ><img src="images/login.png" alt="" style="background-color: #bc6c25; border-radius: 50%;"></span>
-        <a href="/login.html">login</a>
+        <span ><img src="images/login.png" alt="" ></span>
+        <a href="login.html">login</a>
       </li>
       <li class="logout-link">
-        <span ><img src="images/logout.png" alt="" style="background-color: #bc6c25; border-radius: 50%;"></span>
-        <a href="">Logout</a>
+        <span ><img src="images/logout.png" alt="" ></span>
+        <a href="#">Logout</a>
       </li>
     </ul>
   </aside>
+  <label class="ui-switch" >
+    <input type="checkbox" id="status">
+    <div class="slider">
+      <div class="circle"></div>
+    </div>
+  </label>
+
+  
     <section id="#home">
         
-</div>
+
  <div class="toppin" id="home">
   <nav>
       <ul>
@@ -108,7 +125,8 @@ Lora:wght@400;500;600&family=Nova+Slim&family=Prata&family
                <p>Let us plan it for you</p>
                 <center>
                     <div class="message">
-                     <button><a href="/explore">explore</a></button>
+                      <a href="explore.html" style="text-decoration: none;"> <button>explore</button></a>
+                    
                      </div>
                   </center></div>
     
@@ -129,13 +147,14 @@ Welcome to our extraordinary world of travel!
      as we unlock the
  hidden treasures that await you in every corner of this captivating planet.
                             <br>
-                            <a href="/" style="text-decoration: none;"><button>Want More</button></a>
+                            <a href="explore.html" style="text-decoration: none;"><button>Want More</button></a>
                                
                            
                           </p>
                              <img src="images/persons.jpg" alt="">
                     </div>
                 </div>
+                
                 
                 <main class="service" id="service">
                     <div class=" servtitle" id="">
@@ -148,7 +167,7 @@ Welcome to our extraordinary world of travel!
                               Uncover the wonders of iconic landmarks, mesmerizing landscapes, 
                               and hidden gems as you delve into our curated list
                                of must-visit destinations. 
-                               <a href="" style="text-decoration: none;"><button>explore</button></a></p>
+                               <a href="explore.html" style="text-decoration: none;"><button>explore</button></a></p>
 
                         </div>
                         <div class="cont-1">
@@ -157,21 +176,21 @@ Welcome to our extraordinary world of travel!
                             <p><bold>Hotel Booking: </bold> <br> <br>
                               Discover a world of comfort
                                and luxury with our extensive selection of handpicked hotels.
-                                  <a href="" style="text-decoration: none;"><button>explore</button></a></p>
+                                  <a href="explore.html" style="text-decoration: none;"><button>explore</button></a></p>
                         </div>
                          <div class="cont-1">
                             <div class="img-box3">  </div>
                             <p><bold>Car Offerings:</bold> <br> <br>
                               Hit the road with freedom and convenience 
                               by availing our top-notch car rental services. 
-                              <a href="" style="text-decoration: none;"><button>explore</button></a></p>
+                              <a href="explore.html" style="text-decoration: none;"><button>explore</button></a></p>
                         </div> <div class="cont-1">
                             <div class="img-box4">  </div>
                             <p><bold>Tour Guiders:</bold> <br> <br>
                               Embark on a voyage of discovery with our professional tour guides 
                               who are passionate about sharing 
                               their extensive knowledge and insights. 
-                              <a href="" style="text-decoration: none;"><button>explore</button></a></p>
+                              <a href="explore.html" style="text-decoration: none;"><button>explore</button></a></p>
                         </div>
                     </div>
                 </main>
@@ -244,10 +263,12 @@ Welcome to our extraordinary world of travel!
                     </div>
                   </div>
                   <footer id="aboutus">
-                    
-                    <img src="images/logo1.png" alt="" width="200px" height="120px" class="imggg">
-                               
-                    <div class="foot-cont">
+                    <div class="foot-logo">
+                      <img src="images/logo1.png" alt="" width="200px" height="120px" class="imggg">
+                         
+                    </div>
+                         
+                    <div class="foot-cont" id>
                         <div class="image-foot">
                             <div class="maptext">   
       
@@ -281,6 +302,7 @@ Welcome to our extraordinary world of travel!
                         </div>
                     </div>
                   </footer>
+                  <script src="index.js"></script>
                   
 </body>
 </html>

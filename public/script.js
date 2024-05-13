@@ -1,40 +1,56 @@
-let dropdownBtn = document.getElementById("drop-text");
-let list = document.getElementById("list");
-let icon = document.getElementById("icon");
-let span = document.getElementById("span");
-let input = document.getElementById("search-input");
-let listItmes = document.querySelectorAll(".dropdown-list-item");
-let search=document.getElementById("searchicon");
-//show dropdown list on click on dropdown
-dropdownBtn.onclick = function () {
-    //rotate arrow icon
-    if(list.classList.contains("show")){
-        icon.style.rotate = "-0deg";
-    } else {
 
-        icon.style.rotate = "-180deg";
-    }
-    list.classList.toggle("show");
-};
+const checkbox = document.getElementById("status");
 
-//hide dropdown list when click outside dropdown btn
-window.onclick = function (e) {
-    if (e.target.id !== "drop-text" && e.target.id !== "span" && e.target.id !== "icon") {
-        list.classList.remove("show");
-        icon.style.rotate = "0deg";
-    }
-};
+// Add event listener to the switch
+checkbox.addEventListener('change', function() {
+  // Check if the switch is checked or not
+  if (checkbox.checked) {
+    // Enable dark mode
+    enableDarkMode();
+  } else {
+    // Disable dark mode
+    disableDarkMode();
+  }
+});
 
-for(item of listItmes){
-    item.onclick = function(e){
-        //change dropdown btn text on click on selected list item
-        span.innerText = e.target.innerText;
+// Function to enable dark mode
+function enableDarkMode() {
+  var darkModeButton = document.querySelector('.dark-body');
+  var footer = document.querySelector('.foot-cont');
+  var body = document.querySelector('.middle');
 
-        if(e.target.innerText == "Everything"){
-            input.placeholder = "Search Anything...";
-        }
-        input.placeholder =e.target.innerText ;
-        
-console.log(input.placeholder);
-    }}
+  body.classList.add("dark-body");
+
+
+  // Store the dark mode state in local storage
+  localStorage.setItem('darkMode', 'enabled');
+}
+
+// Function to disable dark mode
+function disableDarkMode() {
+  var body = document.querySelector('.middle');
+  var footer = document.querySelector('.foot-cont');
+
+  body.classList.remove('dark-body');
+  footer.classList.remove('dark-body');
   
+  var tassk = document.querySelectorAll('.task');
+  for (var i = 0; i < tassk.length; i++) {
+    tassk[i].classList.remove("dark-body");
+  }
+
+  // Remove the dark mode state from local storage
+  localStorage.removeItem('darkMode');
+}
+
+// Check if the dark mode state is stored in local storage
+var darkModeState = localStorage.getItem('darkMode');
+
+// Set the initial state of the dark mode switch based on the stored value
+if (darkModeState === 'enabled') {
+  checkbox.checked = true;
+  enableDarkMode();
+} else {
+  checkbox.checked = false;
+  disableDarkMode();
+}

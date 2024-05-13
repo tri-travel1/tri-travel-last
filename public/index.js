@@ -1,63 +1,181 @@
 
-
-const toggleSwitch = document.querySelector('input[type="checkbox"]');
-const nav = document.getElementById('nav');
-const toggleIcon = document.getElementById('toggle-icon');
-const image1 = document.getElementById('image1');
-const image2 = document.getElementById('image2');
-const image3 = document.getElementById('image3');
-const textBox = document.getElementById('text-box');
-
-const DARK_THEME = 'dark';
-const LIGHT_THEME = 'light';
-
-// Dark or Light Images
-function imageMode(color) {
-  image1.src = `img/undraw_proud_coder_${color}.svg`;
-  image2.src = `img/undraw_feeling_proud_${color}.svg`;
-  image3.src = `img/undraw_conceptual_idea_${color}.svg`;
+function toggleSidebar(){
+  var sidebar=document.querySelector('.sidebar');
+  sidebar.classList.toggle('open');
 }
 
-function toggleDarkLightMode(mode) {
-  nav.style.backgroundColor =
-    mode === DARK_THEME ? 'rgb(0 0 0 / 50%)' : 'rgb(255 255 255 / 50%)';
-  textBox.style.backgroundColor =
-    mode === DARK_THEME ? 'rgb(255 255 255 / 50%)' : 'rgb(0 0 0 / 50%)';
-  // Icon text
-  toggleIcon.children[0].textContent =
-    mode === DARK_THEME ? 'Dark Mode' : 'Light Mode';
-  // Change icon
-  mode === DARK_THEME
-    ? toggleIcon.children[1].classList.replace('fa-sun', 'fa-moon')
-    : toggleIcon.children[1].classList.replace('fa-moon', 'fa-sun');
 
-  // Changing images
-  mode === DARK_THEME ? imageMode('dark') : imageMode('light');
-}
+const checkbox = document.getElementById("status");
 
-// Switch Theme Dynamically
-function switchTheme(event) {
-  if (event.target.checked) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    localStorage.setItem('theme', 'dark');
-    toggleDarkLightMode(DARK_THEME);
+// Add event listener to the switch
+checkbox.addEventListener('change', function() {
+  // Check if the switch is checked or not
+  if (checkbox.checked) {
+    // Enable dark mode
+    enableDarkMode();
   } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    localStorage.setItem('theme', 'light');
-    toggleDarkLightMode(LIGHT_THEME);
+    // Disable dark mode
+    disableDarkMode();
   }
+});
+
+// Function to enable dark mode
+function enableDarkMode() {
+  var darkModeButton = document.querySelector('.dark-body');
+  var footer = document.querySelector('.foot-cont');
+  var body = document.querySelector('.middle');
+
+  var tassk = document.querySelectorAll('.task');
+  for (var i = 0; i < tassk.length; i++) {
+    tassk[i].classList.add("dark-body");
+  }
+  footer.classList.add("dark-body");
+  body.classList.add("dark-body");
+
+
+  // Store the dark mode state in local storage
+  localStorage.setItem('darkMode', 'enabled');
 }
 
-// Event Listeners
-toggleSwitch.addEventListener('change', switchTheme);
+// Function to disable dark mode
+function disableDarkMode() {
+  var body = document.querySelector('.middle');
+  var footer = document.querySelector('.foot-cont');
 
-// Check Local Storage For Theme
-const currentTheme = localStorage.getItem('theme');
-if (currentTheme) {
-  document.documentElement.setAttribute('data-theme', currentTheme);
-
-  if (currentTheme === 'dark') {
-    toggleSwitch.checked = true;
-    toggleDarkLightMode(DARK_THEME);
+  body.classList.remove('dark-body');
+  footer.classList.remove('dark-body');
+  
+  var tassk = document.querySelectorAll('.task');
+  for (var i = 0; i < tassk.length; i++) {
+    tassk[i].classList.remove("dark-body");
   }
+
+  // Remove the dark mode state from local storage
+  localStorage.removeItem('darkMode');
 }
+
+// Check if the dark mode state is stored in local storage
+var darkModeState = localStorage.getItem('darkMode');
+
+// Set the initial state of the dark mode switch based on the stored value
+if (darkModeState === 'enabled') {
+  checkbox.checked = true;
+  enableDarkMode();
+} else {
+  checkbox.checked = false;
+  disableDarkMode();
+}
+
+
+const bars = document.querySelector(".bar"),
+close = document.querySelector(".close"),
+menu = document.querySelector(".menu");
+
+bars.addEventListener("click", () => {
+    menu.classList.add("active");
+    gsap.from(".menu", {
+        opacity: 0,
+        duration: .3
+    })
+
+    gsap.from(".menu ul", {
+        opacity: 0,
+        x: -300
+    })
+});
+
+close.addEventListener("click", () => {
+    menu.classList.remove("active")
+});
+
+function animateContent(selector) {
+    selector.forEach((selector) => {
+        gsap.to(selector, {
+            y: 30,
+            duration: 0.1,
+            opacity: 1,
+            delay: 0.2,
+            stagger: 0.2,
+            ease: "power2.out",
+        });
+    });
+}
+
+function scrollTirggerAnimation(triggerSelector, boxSelectors) {
+    const timeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: triggerSelector,
+            start: "top 50%",
+            end: "top 80%",
+            scrub: 1,
+        },
+    });
+
+    boxSelectors.forEach((boxSelector) => {
+        timeline.to(boxSelector, {
+            y: 0,
+            duration: 1,
+            opacity: 1,
+        });
+    })
+}
+
+function swipeAnimation(triggerSelector, boxSelectors) {
+    const timeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: triggerSelector,
+            start: "top 50%",
+            end: "top 100%",
+            scrub: 3,
+        },
+    });
+
+    boxSelectors.forEach((boxSelector) => {
+        timeline.to(boxSelector, {
+            x: 0,
+            duration: 1,
+            opacity:1,
+        });
+    });
+}
+
+function galleryAnimation(triggerSelector, boxSelectors) {
+    const timeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: triggerSelector,
+            start: "top 100%",
+            end: "bottom 100%",
+            scrub: 1,
+        },
+    });
+
+    boxSelectors.forEach((boxSelector) => {
+        timeline.to(boxSelector, {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+        });
+    });
+}
+
+
+
+
+animateContent([".home .content h5, .home .content h1, .home .content p, .home .content .search"]);
+
+scrollTirggerAnimation(".travel", [".travel .box1", ".travel .box2", ".travel .box3"]);
+
+scrollTirggerAnimation(".feedback .container", [".feedback .label", ".feedback .heading", ".feedback .paragraph"]);
+
+scrollTirggerAnimation(".article", [".article .label", ".article .heading"]);
+
+swipeAnimation(".destinations", [".destinations .heading", ".destinations .content"])
+
+swipeAnimation(".article", [".article .latest-article", ".article .box1", ".article .box2", ".article .box3", ".article .box4"])
+
+galleryAnimation(".destinations .gallery", [".destinations .gallery .box1",".destinations .gallery .box2",".destinations .gallery .box3",".destinations .gallery .box4",".destinations .gallery .box5"])
+
+galleryAnimation(".featured .gallery", [".featured .gallery .box1",".featured .gallery .box2",".featured .gallery .box3",".featured .gallery .box4"])
+
+galleryAnimation(".feedback .voices", [".feedback .voices .box1",".feedback .voices .box2",".feedback .voices .box3",".feedback .voices .box4",".feedback .voices .box5",".feedback .voices .box6"])
+
