@@ -21,14 +21,26 @@ app.use('/booking', bookings);
 
 
 
-app.get('/explore',async(_,res)=>{
+app.get('/exploreee',async(_,res)=>{
   const cars = await prisma.car.findMany();
   const hotels = await prisma.hotel.findMany();
   const tours = await prisma.tourGuide.findMany();
   const sits = await prisma.site.findMany();
   console.log({cars, hotels, tours, sits})
-  return res.render('explore',{
+  return res.render('exploreee',{
     cars,hotels,tours,sits
+  })
+})
+
+app.get('/profile',async(_,res)=>{
+  const cars = await prisma.car.findMany();
+  const hotels = await prisma.hotel.findMany();
+  const tours = await prisma.tourGuide.findMany();
+  const sits = await prisma.site.findMany();
+  const users = await prisma.customer.findMany();
+  console.log({cars, hotels, tours, sits,customer})
+  return res.render('profile',{
+    cars,hotels,tours,sits,users
   })
 })
 
