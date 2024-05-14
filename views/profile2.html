@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Profile</title>
+    <link rel="stylesheet" href="/profilestyl.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+   </head>
+
+  
+<body>
+  <div class="container">
+
+
+      <div class="profile-header">
+        <header>
+          <div class="profiles">
+            <div class="imgdiv">
+              <img src="/images/tremezo.webp" alt="Profile Picture" class="profile-image">
+            </div>
+      
+            <div class="names">
+              <button class="profile-toggle" aria-label="Toggle Profile Details">
+                <%= user.name %>
+              </button>
+      
+              <div class="profile-details">  <p><%= user.email %></p>
+                <p><%= user.phone_number %></p>
+              </div>
+            </div>
+          </div>
+        </header>
+      </div>
+      
+                <div class="profile-popup" style="display: none;">
+                    <h2>User Details</h2>
+                       <div class="profile-info">
+                           <img src="/images/tremezo.webp" alt="Profile Picture" class="profile-image">
+                           <p><%= user.name %></p>
+                           <p><%= user.email %></p>
+                           <p><%= user.phone_number %></p>
+                      </div>
+                </div>
+      
+     
+       
+      
+
+
+
+            <div class="booking-details" >
+                 <div class="detailtite">
+                    <h2>Your Upcoming Trip</h2>
+                 </div>
+         <ul>
+                 <div class="alldetails">
+                  <div class="lists">
+                        <span class="detail-label">Car</span>
+                        <span class="detail-value"><%= user.Booking[0].car.name %></span>
+                       </div>
+            
+                     <div class="lists">
+                      <span class="detail-label">Booked Hotel</span>
+                      <span class="detail-value"><%= user.Booking[0].hotel.name %></span>
+                     </div>
+           
+                    <div class="lists">
+                     <span class="detail-label">Booking Site</span>
+                     <span class="detail-value"><%= user.Booking[0].site.name %></span>
+                    </div>
+
+                    <div class="lists">
+                        <span class="detail-label">Tour Guide</span>
+                         <span class="detail-value"><%= user.Booking[0].TourGuide.name %></span>
+                 </div>
+            </div> 
+         
+      </ul>
+      </section>
+     </div> 
+        <section >
+
+
+
+    </div>
+        <script>
+$(document).ready(function() {
+    // Variable to track whether the popup is open
+    var isPopupOpen = false;
+
+    // Toggle the profile popup when the profile-toggle button is clicked
+    $('.profile-toggle').click(function() {
+        if (isPopupOpen) {
+            $('.profile-popup').hide();
+            isPopupOpen = false;
+        } else {
+            $('.profile-popup').show();
+            isPopupOpen = true;
+        }
+    });
+
+    // Close the profile popup when clicking outside of it
+    $(document).on('click', function(event) {
+        if (!$(event.target).closest('.profile-popup').length &&!$(event.target).closest('.profile-toggle').length) {
+            $('.profile-popup').hide();
+            isPopupOpen = false;
+        }
+    });
+});
+
+          </script>
+          
+</body>
+</html>
