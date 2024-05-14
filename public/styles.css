@@ -97,8 +97,8 @@ text-align: center;
     scrollbar-width: none;
     height: calc(100% - 140px);
   } */
-  .menu-con{
-    margin-top: 50px;
+  .menu-icon{
+    margin-top: 20px;
     
     width: 30px;
     padding: 20px;
