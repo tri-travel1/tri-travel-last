@@ -7,8 +7,9 @@ router.post('/',async(req,res)=>{
   try {
    const usersname = req.body.username;
    const usersemail = req.body.useremail;
-   const userspassword = req.body.userpassword
-   const usersphone = req.body.usernumber
+   const userspassword = req.body.userpassword;
+   const usersphone = req.body.usernumber;
+  //  const userimage = req.body.userimage
 
    console.log({usersemail, userspassword, usersname, usersphone}, req.body)
 
@@ -17,7 +18,8 @@ router.post('/',async(req,res)=>{
    name : usersname,    
    email: usersemail,
    password :userspassword,
-   phone_number: usersphone
+   phone_number: usersphone,
+
     }
    }) 
 

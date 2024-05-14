@@ -158,13 +158,6 @@ body {
 	display: flex;
 	justify-content: center;
 }
-/* SIDEBAR */
-
-
-
-
-
-/* CONTENT */
 #content {
 	position: relative;
 	width: calc(100% - 280px);
@@ -176,10 +169,6 @@ body {
 	left: 60px;
 }
 
-
-
-
-/* NAVBAR */
 #content nav {
 	height: 56px;
 	background: var(--light);
@@ -244,7 +233,7 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: var(--blue);
+	background: none;
 	color: var(--light);
 	font-size: 18px;
 	border: none;
@@ -306,8 +295,6 @@ body {
 
 
 
-
-/* MAIN */
 #content main {
 	width: 100%;
 	padding: 36px 24px;
@@ -367,12 +354,16 @@ body {
 	margin-top: 36px;
 }
 #content main .box-info li {
+	
+	
 	padding: 24px;
-	background: var(--light);
-	border-radius: 20px;
-	display: flex;
-	align-items: center;
-	grid-gap: 24px;
+    background: var(--light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
 }
 #content main .box-info li .bx {
 	width: 80px;
@@ -396,7 +387,7 @@ body {
 	color: var(--orange);
 }
 #content main .box-info li .text h3 {
-	font-size: 24px;
+	font-size: 15px;
 	font-weight: 600;
 	color: var(--dark);
 }
@@ -417,11 +408,17 @@ body {
 	color: var(--dark);
 }
 #content main .table-data > div {
+	
 	border-radius: 20px;
-	background: var(--light);
-	padding: 24px;
-	overflow-x: auto;
+    background: var(--light);
+    padding: 24px;
+    height: 580px;
+	gap: 24px;
+
+    overflow-x: auto;
+    overflow-y: auto;
 }
+
 #content main .table-data .head {
 	display: flex;
 	align-items: center;
@@ -489,35 +486,9 @@ body {
 
 #content main .table-data .todo {
 	flex-grow: 1;
-	flex-basis: 300px;
+	flex-basis: 400px;
 }
-#content main .table-data .todo .todo-list {
-	width: 100%;
-}
-#content main .table-data .todo .todo-list li {
-	width: 100%;
-	margin-bottom: 16px;
-	background: var(--grey);
-	border-radius: 10px;
-	padding: 14px 20px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-#content main .table-data .todo .todo-list li .bx {
-	cursor: pointer;
-}
-#content main .table-data .todo .todo-list li.completed {
-	border-left: 10px solid var(--blue);
-}
-#content main .table-data .todo .todo-list li.not-completed {
-	border-left: 10px solid var(--orange);
-}
-#content main .table-data .todo .todo-list li:last-child {
-	margin-bottom: 0;
-}
-/* MAIN */
-/* CONTENT */
+
 
 
 
@@ -585,9 +556,7 @@ body {
 		min-width: 420px;
 	}
 	#content main .table-data .order table {
-		min-width: 420px;
+		min-width: 0px;
 	}
-	#content main .table-data .todo .todo-list {
-		min-width: 420px;
-	}
+	
 }
