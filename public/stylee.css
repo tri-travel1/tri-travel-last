@@ -11,6 +11,10 @@
     margin: 0;
 
 }
+body {
+  background-color: #000;
+  color: white;
+}
 .title-description1 {
         padding: 80px;
     font-size:clamp(2rem, calc(2rem+3.5vw),8rem);
@@ -67,10 +71,10 @@ align-items: center;
     justify-content: center;
     height: 70vh;
     display: flexs;
-    color: black;
+    color: white;
     font-family: "Expletus Sans", sans-serif;
 
-    background-color: white;
+    background-color: black;
     transition: background-color 0.3s ease-in-out;
     
 }
@@ -383,14 +387,14 @@ color: #000;
   bottom: 0;
   width: 100%;
   height: 75%;
-  opacity: 0;
+  opacity: 10;
   transition: 0.3s;
 }
 .cardd .info{
   position: absolute;
-  bottom: -50%;
+  bottom: -0%;
   padding: 5px;
-  opacity: 0;
+  opacity: 10;
   
   transition: 0.8s ,left,1.7s opacity;
 }
@@ -463,11 +467,10 @@ color: #000;
         padding-top: 30px;
         display: flex;
         font-size: 2rem;
-        color: #111;
+        
 
     }
     fieldset{background-color: #304663;
-/**https://github.com/tri-travel1/front-end.git*/
         display: flex;
         justify-content: center;
         align-items: center;
@@ -560,22 +563,29 @@ color: #000;
         color: blue;
         font-weight: 600;
     }
-    footer{
+    footer{    
+        background-image: linear-gradient(#1a1919,rgba(22, 19, 19, 0.067) ,#191414),  url('images/agelgel.jpg');
+     
+      background-position: center;
+
+      background-size: cover;
         justify-content: center;
         align-items: center;
         display: flex;
         padding: 30px;
         margin-top: 40px;
+        max-height: 800px;
     }
+ 
     .container {
-        justify-content: center;
+     justify-content: center;
         align-items: center;
         overflow: hidden;
         position: relative;
-        max-width: 500px;
+        max-width: 600px;
         width: 100%;
         color: white;
-        background: transparent;
+        background:linear-gradient(to bottom right,#bc6c25 ,white);
         padding: 25px;
         border-radius: 8px;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
@@ -821,7 +831,4 @@ color: #000;
   width: 0;
   height: 0;
 }
-.dark-body {
-  background-color: #000;
-  color: white;
-}
+

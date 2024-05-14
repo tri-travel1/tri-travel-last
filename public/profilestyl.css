@@ -8,8 +8,8 @@ background-color: #f5f5f5;
 }
 
 .container {
-
-margin: 80px auto;
+max-width: 700px;
+margin: 60px auto;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
@@ -20,9 +20,10 @@ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 .profiles{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
 }
 .profile-header {
+
 display: flex;
 align-items: center;
 padding: 20px;
@@ -35,41 +36,79 @@ width: 100px;
 height: 100px;
 border-radius: 50%;
 object-fit: cover;
+justify-content: center;
+
+}
+.names{
+  justify-content: center;
 }
 .booking-details{
-  width: 60%;
- /* height: 400px; */
+  width: 50%;
+ height: 400px;
  display: flex;
  flex-direction: column;
  justify-content: center;
  margin: 0 auto;
 }
-.profile-info {
-margin-left: 70px;
-}
+
 .detail-label{
 margin-right: 30px;
-/* font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; */
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 font-size:large;
 }
 .alldetails{
   display: flex;
   flex-direction: column;
   gap: 13px;
+  margin-left: 10px;
 }
 .lists{
-  border: none;
   height: 50px;
-  width: 250px;
   background-color: #e9e1e1;
   border-radius: 20px;
-  justify-content: center;
+  justify-content: space-between;
   color: rgb(46, 46, 46);
-
+  text-align: center;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
 }
+.detailtite{
+  margin-left: 20px;
+}
+
+.profile-details {
+  display: none; /* Hide by default */
+}
+.profile-toggle{
+  border: none;
+  font-size:x-large;
+  background-color: #f9f5ee ;
+  margin-top: 50px;
+}
+.profile-popup {
+  display: none; /* Keep hidden by default */
+  position: fixed; /* Fixed position */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Center the popup */
+  background-color: #fff; /* Background color */
+  padding: 40px; /* Padding around the content */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  z-index: 1000; /* Ensure it's above other content */
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+
 @media (max-width: 768px) {
   .container {
-    flex-direction: column; /* Stack elements on top of each other */
+    flex-direction: column; 
+    margin-left: 20px;
   }
 
   .profiles {
@@ -83,6 +122,7 @@ font-size:large;
   .profile-info {
     margin-left: 20px; /* Adjust margin for smaller layout */
   }
+  .alldetails{
+    margin-left: 60px;
+  }
 }
-/* fella; */
-/* Add styles for profile popup and form elements here */
