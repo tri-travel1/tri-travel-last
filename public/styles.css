@@ -624,12 +624,18 @@ height: 200px;
   .image-foot{
     background-image:url(images/discover.jpg);
     height: 500px;
-    width: 600px;
+    width: 500px;
     background-size: cover;
     display: flex;
     margin-right: 40px;
     
 
+  }
+  @media  (max-width: 700px) {
+    .image-foot{
+height: 400px;
+width: 600px;
+    }
   }
   .logo{
      margin-left: 70px;
@@ -690,16 +696,17 @@ height: 200px;
   --circle-bg: #bc6c25;
   --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
 position: fixed;
-top: 7%;
+top: 12%;
 left: 95%;
 }
 @media (max-width: 700px) {
   .ui-switch {
     top: 10%;
-    left: 85%;
+    left: 80%;
     width: 150px;
     height: 150px;
   }
+
 }
 
 .ui-switch input {
