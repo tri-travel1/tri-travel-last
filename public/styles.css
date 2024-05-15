@@ -130,6 +130,7 @@ text-align: center;
   margin: 20px 0 0;
   padding: 0;
   display:none ;
+  overflow-y: none;
 
 }
 .sidebar.open .links{
@@ -199,14 +200,13 @@ text-align: center;
   
   .sidebar{
     scroll-behavior: auto;
-    position: fixed;
+    position: absolute;
     width: 200px;
     height: 100vh;
     position: fixed;
     top: 0;
     left: -00px;
     color: #fff;
-
     transition: left 0.3s ease-in-out;
     overflow-y: auto;
 
@@ -663,7 +663,7 @@ width: 600px;
 
   }
   .abouttus{
-    font-family: initial;
+    font-family: 'Expletus Sans';
     margin-top: 30px;
     text-align: left;
     letter-spacing: 1.4px;
@@ -780,4 +780,11 @@ left: 90%;
 .dark-body {
   background-color: #000;
   color: white;
+}
+.bla{
+  display: flex;
+  flex-direction:  row;
+}
+.aboutustxt{
+  font-size: 12px;
 }
