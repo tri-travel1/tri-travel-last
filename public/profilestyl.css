@@ -3,17 +3,25 @@ body {
 font-family: Arial, sans-serif;
 margin: 0;
 padding: 0;
-background-color: #f5f5f5; 
+background-image: url(/images/profile.jpg);
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
 }
 
 .container {
-max-width: 700px;
-margin: 60px auto;
+max-width: 1000px;
+/* margin: 60px auto; */
+margin-left: 25px;
 display: flex;
 flex-direction: row;
 flex-wrap: wrap;
-background-color: #eee;
+background-color: rgb(238, 238, 238 ,0.4);
 border-radius: 5px;
 box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 
