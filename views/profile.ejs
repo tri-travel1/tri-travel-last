@@ -15,11 +15,29 @@
 
       <div class="profile-header">
         <header>
+
+          <ul class="breadcrumb">
+            <li>
+                <a href="/profile" id="profile-link">Profile</a>
+            </li>
+            <li><i class='bx bx-chevron-right'></i></li>
+            <li>
+                <a class="active" href="/index.html" id="home-link">Home</a>
+            </li>
+        </ul>
+        
+
+
+
           <div class="profiles">
+
+
+
+
             <div class="imgdiv">
               <img src="/images/tremezo.webp" alt="Profile Picture" class="profile-image">
             </div>
-      
+
             <div class="names">
               <button class="profile-toggle" aria-label="Toggle Profile Details">
                 <%= user.name %>
@@ -109,7 +127,66 @@ $(document).ready(function() {
     });
 });
 
-          </script>
-          
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to get the current path
+    const getCurrentPath = () => window.location.pathname;
+
+    // Function to check if the current path matches the href of a link
+    const isActive = (path, href) => path === href || path.startsWith(href + '/');
+
+    // Get the current path
+    const currentPath = getCurrentPath();
+
+    // Find the links
+    const profileLink = document.getElementById('profile-link');
+    const homeLink = document.getElementById('home-link');
+
+    // Determine which link should be active based on the current path
+    let activeLink;
+    if (isActive(currentPath, '/profile')) {
+        activeLink = profileLink;
+    } else if (isActive(currentPath, '/index.html')) {
+        activeLink = homeLink;
+    }
+
+    // Apply the active class to the determined link
+    if (activeLink) {
+        activeLink.classList.add('active');
+    }
+
+    // Optionally, add a click event listener to the Home link to change its color
+    homeLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        homeLink.style.color = "red"; // Change the color to red, for example
+    });
+});
+
+
+
+
+//       document.addEventListener('DOMContentLoaded', function() {
+//          const isActive = (url, href) => window.location.pathname.includes(href);
+
+//      const profileLink = document.getElementById('profile-link');
+//     const homeLink = document.getElementById('home-link');
+
+//     if (isActive('/', '/profile')) {
+//         profileLink.classList.add('active');
+//     } 
+//     else if (isActive('/', '/index.html')) {
+//         homeLink.classList.add('active');
+//     }
+
+//     homeLink.addEventListener('click', function(e) {
+//         e.preventDefault();
+//         homeLink.style.color = "#ff0000"; 
+//     });
+// });
+
+
+
+</script>          
 </body>
 </html>

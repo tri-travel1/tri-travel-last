@@ -462,17 +462,14 @@ color: #000;
         display: flex;
         padding: 10px;
         text-align: center;
-<<<<<<< HEAD
         font-size: 0.81rem;
       
         justify-content: center;
         color: #111;
         font-weight: 800;
       
-=======
         color: rgb(69, 69, 252);
         font-weight: 600;
->>>>>>> 8ad36e46bf7ef2cc791c4df1f60e1bbab26d1657
     }
     
     footer{    
@@ -495,14 +492,9 @@ color: #000;
         position: relative;
         max-width: 600px;
         width: 100%;
-<<<<<<< HEAD
-        color: white;
-        background:linear-gradient(to  right bottom ,#bc6c25 ,black);
-=======
         color: rgb(244, 238, 235);
         background-color: hsla(0, 1%, 24%, 0.7);
         /* background:linear-gradient(to bottom right,#6d3401 ,white); */
->>>>>>> 8ad36e46bf7ef2cc791c4df1f60e1bbab26d1657
         padding: 25px;
         border-radius: 8px;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
