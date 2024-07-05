@@ -75,22 +75,22 @@
                  <div class="alldetails">
                   <div class="lists">
                         <span class="detail-label">Car</span>
-                        <span class="detail-value"><%= user.Booking[0].car.name %></span>
+                        <span class="detail-value"><%= user.Booking[0]?.car.name %></span>
                        </div>
             
                      <div class="lists">
                       <span class="detail-label">Booked Hotel</span>
-                      <span class="detail-value"><%= user.Booking[0].hotel.name %></span>
+                      <span class="detail-value"><%= user.Booking[0]?.hotel.name %></span>
                      </div>
            
                     <div class="lists">
                      <span class="detail-label">Booking Site</span>
-                     <span class="detail-value"><%= user.Booking[0].site.name %></span>
+                     <span class="detail-value"><%= user.Booking[0]?.site.name %></span>
                     </div>
 
                     <div class="lists">
                         <span class="detail-label">Tour Guide</span>
-                         <span class="detail-value"><%= user.Booking[0].TourGuide.name %></span>
+                         <span class="detail-value"><%= user.Booking[0]?.TourGuide.name %></span>
                  </div>
             </div> 
          
